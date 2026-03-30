@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Performance | Next-Gen Sportswear</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">APEX PERFORMANCE</div>
+        <div class="nav-links">
+            <a href="#hero">Home</a>
+            <a href="#mission">Philosophy</a>
+            <a href="#products">Gear</a>
+            <a href="#footer">Contact</a>
+        </div>
+        <a href="#" class="btn" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Shop Now</a>
+    </nav>
+
+    <header id="hero" class="hero">
+        <div class="hero-content reveal">
+            <h1>Push Past <br><span style="color: var(--neon-blue);">Yesterday's Limit</span></h1>
+            <p>Advanced biometric gear and high-performance apparel engineered for the athletes of tomorrow.</p>
+            <a href="#products" class="btn">Explore the Collection</a>
+        </div>
+    </header>
+
+    <section id="mission" class="mission-vision">
+        <div class="mv-card reveal">
+            <h2>Our Mission</h2>
+            <p>To empower every athlete with disruptive technology that breaks physical barriers. We don't just sell gear; we provide the tools for human evolution in sports performance.</p>
+        </div>
+        <div class="mv-card reveal">
+            <h2>Our Vision</h2>
+            <p>To define the future of athletic competition where the synergy between human potential and intelligent design creates a new era of sportsmanship.</p>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div class="section-title reveal">
+            <h2>Featured Gear</h2>
+            <p style="color: var(--text-secondary);">Engineered for peak performance.</p>
+        </div>
+        <div class="product-grid">
+            {% for product in products %}
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+                </div>
+                <div class="product-info">
+                    <h3>{{ product.name }}</h3>
+                    <div class="price">{{ product.price }}</div>
+                    <p>{{ product.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="logo" style="margin-bottom: 2rem;">APEX PERFORMANCE</div>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">&copy; 2026 Apex Performance Inc. All rights reserved.</p>
+        <div class="nav-links" style="display: flex; justify-content: center; gap: 2rem;">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script>
+        // Simple reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        reveals.forEach(reveal => {
+            observer.observe(reveal);
+        });
+    </script>
+</body>
+</html>
