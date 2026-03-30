@@ -1,0 +1,24 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+instance/
+.pytest_cache/
+.coverage
+htmlcov/
+.env
+.flaskenv
+.idea/
+.vscode/
+
+# Antigravity artifacts and temp files
+.gemini/
+/tmp/
+implementation_plan.md
+task.md
+walkthrough.md
+*.webp
+*.png (except in static/images/)
