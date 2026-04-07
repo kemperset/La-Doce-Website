@@ -4,48 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex Performance | Next-Gen Sportswear</title>
+    <title>LA DOCE: Tu Bazar Deportivo</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
     <nav>
-        <div class="logo">LA DOCE</div>
+        <a href="/" class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="LA 12 Logo">
+        </a>
         <div class="nav-links">
             <a href="#hero">Home</a>
-            <a href="#mission">Philosophy</a>
-            <a href="#products">Gear</a>
-            <a href="#footer">Contact</a>
+            <a href="#mission">Filosofía</a>
+            <a href="#products">Productos</a>
+            <a href="#footer">Nosotros</a>
         </div>
-        <a href="#" class="btn" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Shop Now</a>
+        <a href="#" class="btn" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Comprar</a>
     </nav>
 
     <header id="hero" class="hero">
         <div class="hero-content reveal">
-            <h1>Push Past <br><span style="color: var(--neon-blue);">Yesterday's Limit</span></h1>
-            <p>Advanced biometric gear and high-performance apparel engineered for the athletes of tomorrow.</p>
-            <a href="#products" class="btn">Explore the Collection</a>
+            <h1>Supera tus límites <br><span style="color: var(--color-green);">de ayer</span></h1>
+            <p>Ropa deportiva de alto rendimiento diseñada para atletas que buscan superar sus límites.</p>
+            <a href="#products" class="btn">Explorar la colección</a>
         </div>
     </header>
 
     <section id="mission" class="mission-vision">
         <div class="mv-card reveal">
-            <h2>Our Mission</h2>
-            <p>To empower every athlete with disruptive technology that breaks physical barriers. We don't just sell
-                gear; we provide the tools for human evolution in sports performance.</p>
+            <h2>Nuestra Misión</h2>
+            <p>Empoderar a cada atleta con tecnología disruptiva que rompa barreras físicas. No solo vendemos
+                equipamiento; proporcionamos las herramientas para la evolución humana en el rendimiento deportivo.</p>
         </div>
         <div class="mv-card reveal">
-            <h2>Our Vision</h2>
-            <p>To define the future of athletic competition where the synergy between human potential and intelligent
-                design creates a new era of sportsmanship.</p>
+            <h2>Nuestra Visión</h2>
+            <p>Definir el futuro de la competición deportiva donde la sinergia entre el potencial humano y el diseño
+                inteligente cree una nueva era de deportividad.</p>
         </div>
     </section>
 
     <section id="products" class="products">
         <div class="section-title reveal">
-            <h2>Featured Gear</h2>
-            <p style="color: var(--text-secondary);">Engineered for peak performance.</p>
+            <h2>Productos Destacados</h2>
+            <p style="color: var(--text-secondary);">Diseñados para un rendimiento óptimo.</p>
         </div>
         <div class="product-grid">
             {% for product in products %}
@@ -63,14 +65,31 @@
         </div>
     </section>
 
+    <section id="location" class="location">
+        <div class="section-title reveal">
+            <h2>Nuestra Ubicación</h2>
+            <p style="color: var(--text-secondary);">Ven a visitarnos en Pucallpa.</p>
+        </div>
+        <div class="map-container reveal">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1973.5923762589016!2d-74.53890903040701!3d-8.38348117879866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91a3bd48cdc5f3ad%3A0xf5575bbc077f4ff5!2sBazar%20Deportivo%20La%20Doce%20-%20Pucallpa!5e0!3m2!1ses-419!2spe!4v1775588032456!5m2!1ses-419!2spe"
+                width="100%" height="450"
+                style="border:0; border-radius: 20px; filter: grayscale(1) invert(90%) contrast(1.2);"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
     <footer id="footer">
-        <div class="logo" style="margin-bottom: 2rem;">LA DOCE</div>
-        <p style="color: var(--text-secondary); margin-bottom: 2rem;">&copy; 2026 LA DOCE Inc. Todos los derechos
+        <div class="logo" style="margin-bottom: 2rem; justify-content: center;">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="LA 12 Logo" style="height: 90px;">
+        </div>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">&copy; 2026 LA DOCE Inc. Todos los derechos
             reservados.</p>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;"> Desarrollado por Kemper Aspajo</p>
         <div class="nav-links" style="display: flex; justify-content: center; gap: 2rem;">
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-            <a href="#">LinkedIn</a>
+            <a href="https://www.instagram.com/ladoce.pucallpa/">Instagram</a>
+            <a href="https://www.facebook.com/ladocepucallpa/">Facebook</a>
+            <a href="https://www.tiktok.com/@ladocepucallpa">TikTok</a>
         </div>
     </footer>
 
