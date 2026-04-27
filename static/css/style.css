@@ -138,17 +138,22 @@ nav {
 
 .hero p {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.82);
+    color: #ffffff;
     margin-bottom: 2.5rem;
     line-height: 1.8;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 0.01em;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    text-shadow: 
+        0 0 20px rgba(0, 0, 0, 0.9),
+        0 4px 12px rgba(0, 0, 0, 0.8);
 }
 
 .hero p strong {
-    color: #ffffff;
+    color: #00ff88;
     font-weight: 600;
+    text-shadow:
+        0 0 20px rgba(0, 255, 136, 0.6),
+        0 4px 12px rgba(0, 0, 0, 0.9);
 }
 
 /* Mission & Vision Section */
