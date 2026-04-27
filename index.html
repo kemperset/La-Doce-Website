@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LA DOCE: Tu Bazar Deportivo</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <body>
 
     <nav>
         <a href="/" class="logo">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="LA 12 Logo">
+            <img src="static/images/logo.png" alt="LA 12 Logo">
         </a>
         <div class="nav-links">
             <a href="#hero">Home</a>
@@ -50,18 +50,36 @@
             <p style="color: var(--text-secondary);">Diseñados para un rendimiento óptimo.</p>
         </div>
         <div class="product-grid">
-            {% for product in products %}
             <div class="product-card reveal">
                 <div class="product-image">
-                    <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+                    <img src="static/images/product_1.png" alt="Apex Neon Runners">
                 </div>
                 <div class="product-info">
-                    <h3>{{ product.name }}</h3>
-                    <div class="price">{{ product.price }}</div>
-                    <p>{{ product.description }}</p>
+                    <h3>Apex Neon Runners</h3>
+                    <div class="price">$189.99</div>
+                    <p>Engineered for speed with responsive neon cushioning.</p>
                 </div>
             </div>
-            {% endfor %}
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <img src="static/images/product_2.png" alt="Vanguard Horizon Watch">
+                </div>
+                <div class="product-info">
+                    <h3>Vanguard Horizon Watch</h3>
+                    <div class="price">$299.00</div>
+                    <p>Next-gen biometric tracking with holographic HUD.</p>
+                </div>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <img src="static/images/product_1.png" alt="Elite Tech Fleece">
+                </div>
+                <div class="product-info">
+                    <h3>Elite Tech Fleece</h3>
+                    <div class="price">$125.00</div>
+                    <p>Ultra-breathable micro-fiber for peak performance.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -81,7 +99,7 @@
 
     <footer id="footer">
         <div class="logo" style="margin-bottom: 2rem; justify-content: center;">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="LA 12 Logo" style="height: 90px;">
+            <img src="static/images/logo.png" alt="LA 12 Logo" style="height: 90px;">
         </div>
         <p style="color: var(--text-secondary); margin-bottom: 1rem;">&copy; 2026 LA DOCE Inc. Todos los derechos
             reservados.</p>
