@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LA DOCE: Tu Bazar Deportivo</title>
+    <meta name="description" content="LA DOCE - Bazar deportivo en Pucallpa. Ropa deportiva de alto rendimiento diseñada para atletas.">
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 
@@ -18,9 +19,17 @@
             <a href="#hero">Home</a>
             <a href="#mission">Filosofía</a>
             <a href="#products">Productos</a>
+            <a href="trabaja.html">Trabaja con nosotros</a>
             <a href="#footer">Nosotros</a>
         </div>
-        <a href="#" class="btn" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Comprar</a>
+        <div style="display:flex; align-items:center; gap:1rem;">
+            <!-- Dark / Light Mode Toggle -->
+            <button id="theme-toggle" aria-label="Cambiar modo de color">
+                <span class="toggle-icon">🌙</span>
+                <span class="toggle-label">Modo Oscuro</span>
+            </button>
+            <a href="#" class="btn" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Comprar</a>
+        </div>
     </nav>
 
     <header id="hero" class="hero">
@@ -83,6 +92,7 @@
         </div>
     </section>
 
+
     <section id="location" class="location">
         <div class="section-title reveal">
             <h2>Nuestra Ubicación</h2>
@@ -111,26 +121,7 @@
         </div>
     </footer>
 
-    <script>
-        // Simple reveal on scroll
-        const reveals = document.querySelectorAll('.reveal');
-
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        reveals.forEach(reveal => {
-            observer.observe(reveal);
-        });
-    </script>
+    <script src="static/js/main.js"></script>
 </body>
 
 </html>

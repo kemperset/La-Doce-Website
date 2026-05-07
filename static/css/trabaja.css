@@ -1,0 +1,409 @@
+/* ============================================================
+   trabaja.css  —  Styles for trabaja.html (Trabaja con nosotros)
+   Inherits design tokens from style.css
+   ============================================================ */
+
+/* ── Active nav link ─────────────────────────────────────── */
+.nav-active {
+    color: var(--color-green) !important;
+    position: relative;
+}
+
+.nav-active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-blue), var(--color-green));
+    border-radius: 2px;
+}
+
+/* ── Page Hero ───────────────────────────────────────────── */
+.trabaja-hero {
+    position: relative;
+    min-height: 42vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 9rem 5% 5rem;
+    overflow: hidden;
+}
+
+.trabaja-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(49, 46, 255, 0.18), transparent 55%),
+        radial-gradient(ellipse at 80% 50%, rgba(0, 200, 83, 0.15), transparent 55%),
+        radial-gradient(ellipse at 50% 0%, rgba(255, 30, 30, 0.08), transparent 50%);
+    z-index: 0;
+}
+
+.trabaja-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+}
+
+.trabaja-badge {
+    display: inline-block;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    padding: 0.35rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--color-green);
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.trabaja-hero h1 {
+    font-size: 3.8rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+}
+
+.trabaja-hero h1 .accent {
+    color: var(--color-accent);
+    text-shadow: 0 0 30px rgba(0, 230, 118, 0.35);
+}
+
+.trabaja-hero p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ── Main Layout ─────────────────────────────────────────── */
+.trabaja-section {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 5% 7rem;
+    align-items: start;
+}
+
+/* ── Info Cards (left panel) ─────────────────────────────── */
+.trabaja-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    position: sticky;
+    top: 100px;
+}
+
+.info-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    padding: 1.8rem 1.6rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.info-card:hover {
+    transform: translateX(6px);
+    border-color: var(--color-green);
+    box-shadow: 0 4px 24px rgba(0, 200, 83, 0.1);
+}
+
+.info-icon {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+.info-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: var(--text-primary);
+}
+
+.info-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ── Form Panel (right panel) ────────────────────────────── */
+.trabaja-form-panel {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 28px;
+    padding: 3rem;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 8px 48px rgba(0, 0, 0, 0.25);
+    transition: background 0.4s ease;
+}
+
+.form-header {
+    margin-bottom: 2.2rem;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 1.5rem;
+}
+
+.form-header h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+    color: var(--text-primary);
+}
+
+.form-header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* ── Form Elements ───────────────────────────────────────── */
+#trabaja-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.form-group label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.req {
+    color: var(--color-red);
+}
+
+.req-note {
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--text-secondary);
+    opacity: 0.75;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 12px;
+    padding: 0.85rem 1.1rem;
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.97rem;
+    transition: all 0.3s ease;
+    outline: none;
+    width: 100%;
+    resize: none;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: var(--input-focus-border);
+    background: rgba(0, 200, 83, 0.05);
+    box-shadow: 0 0 0 3px rgba(0, 200, 83, 0.12);
+}
+
+body.light-mode .form-group input[type="text"]:focus,
+body.light-mode .form-group input[type="email"]:focus,
+body.light-mode .form-group textarea:focus {
+    border-color: var(--color-blue);
+    background: rgba(49, 46, 255, 0.04);
+    box-shadow: 0 0 0 3px rgba(49, 46, 255, 0.1);
+}
+
+/* ── File drop zone ──────────────────────────────────────── */
+.file-drop-zone {
+    position: relative;
+    background: var(--input-bg);
+    border: 2px dashed var(--input-border);
+    border-radius: 14px;
+    padding: 1.5rem 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.file-drop-zone:hover {
+    border-color: var(--color-green);
+    background: rgba(0, 200, 83, 0.05);
+}
+
+.file-drop-zone input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.file-drop-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    pointer-events: none;
+}
+
+.file-icon {
+    font-size: 1.8rem;
+}
+
+.file-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.file-label u {
+    color: var(--color-green);
+    cursor: pointer;
+}
+
+.cv-note {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+/* ── Submit Button ───────────────────────────────────────── */
+.btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(90deg, var(--color-blue), var(--color-green));
+    color: white;
+    border: none;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    align-self: center;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background: white;
+    color: black;
+    box-shadow: 0 0 30px rgba(0, 200, 83, 0.4);
+    transform: scale(1.02);
+}
+
+.btn-submit:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ── Status Messages ─────────────────────────────────────── */
+#form-status {
+    text-align: center;
+    font-size: 0.93rem;
+    font-weight: 600;
+    padding: 0.9rem 1.2rem;
+    border-radius: 12px;
+    display: none;
+    line-height: 1.5;
+}
+
+#form-status.success {
+    display: block;
+    background: rgba(0, 200, 83, 0.12);
+    border: 1px solid rgba(0, 200, 83, 0.3);
+    color: #00e676;
+}
+
+#form-status.error {
+    display: block;
+    background: rgba(255, 30, 30, 0.1);
+    border: 1px solid rgba(255, 30, 30, 0.3);
+    color: #ff6b6b;
+}
+
+/* ── Light mode overrides ────────────────────────────────── */
+body.light-mode .trabaja-form-panel {
+    box-shadow: 0 8px 48px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .file-drop-zone:hover {
+    border-color: var(--color-blue);
+    background: rgba(49, 46, 255, 0.04);
+}
+
+body.light-mode #form-status.success {
+    color: #00833a;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .trabaja-section {
+        grid-template-columns: 1fr;
+    }
+
+    .trabaja-info {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+    }
+
+    .info-card:hover {
+        transform: translateY(-4px);
+    }
+}
+
+@media (max-width: 640px) {
+    .trabaja-hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .trabaja-form-panel {
+        padding: 2rem 1.4rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    #theme-toggle .toggle-label {
+        display: none;
+    }
+}

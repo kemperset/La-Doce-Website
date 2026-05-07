@@ -1,24 +1,27 @@
+# ── Sistema Operativo ─────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editores de código ────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.user
+
+# ── Python (legacy / no se usa en producción) ─────────────────
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.Python
 env/
 venv/
-instance/
-.pytest_cache/
-.coverage
-htmlcov/
 .env
 .flaskenv
-.idea/
-.vscode/
 
-# Antigravity artifacts and temp files
+# ── Antigravity / archivos temporales de IA ───────────────────
 .gemini/
-/tmp/
-implementation_plan.md
-task.md
-walkthrough.md
-*.webp
-*.png (except in static/images/)
+
+# ── Archivos de sistema / logs ────────────────────────────────
+*.log
+npm-debug.log*

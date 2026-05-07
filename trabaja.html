@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabaja con Nosotros — LA DOCE</title>
+    <meta name="description" content="Únete al equipo LA DOCE. Envía tu solicitud y CV para formar parte del mejor bazar deportivo de Pucallpa.">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/trabaja.css">
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="static/images/logo.png" alt="LA DOCE Logo">
+        </a>
+        <div class="nav-links">
+            <a href="index.html#hero">Home</a>
+            <a href="index.html#mission">Filosofía</a>
+            <a href="index.html#products">Productos</a>
+            <a href="trabaja.html" class="nav-active">Trabaja con nosotros</a>
+            <a href="index.html#footer">Nosotros</a>
+        </div>
+        <div style="display:flex; align-items:center; gap:1rem;">
+            <button id="theme-toggle" aria-label="Cambiar modo de color">
+                <span class="toggle-icon">🌙</span>
+                <span class="toggle-label">Modo Oscuro</span>
+            </button>
+            <a href="#" class="btn" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Comprar</a>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <div class="trabaja-hero">
+        <div class="trabaja-hero-bg"></div>
+        <div class="trabaja-hero-content">
+            <span class="trabaja-badge">💼 Únete al equipo</span>
+            <h1>Trabaja con <span class="accent">Nosotros</span></h1>
+            <p>¿Eres apasionado del deporte y buscas crecer profesionalmente? En LA DOCE valoramos el talento y el esfuerzo. Envíanos tu solicitud y te contactaremos.</p>
+        </div>
+    </div>
+
+    <!-- FORM SECTION -->
+    <section class="trabaja-section">
+
+        <!-- Left info panel -->
+        <div class="trabaja-info">
+            <div class="info-card">
+                <div class="info-icon">🏆</div>
+                <h3>Cultura de alto rendimiento</h3>
+                <p>Trabajamos con la misma mentalidad que los atletas que vestimos.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">📈</div>
+                <h3>Crecimiento real</h3>
+                <p>Oportunidades de desarrollo dentro de uno de los bazares deportivos líderes en Pucallpa.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🤝</div>
+                <h3>Equipo unido</h3>
+                <p>Un ambiente de trabajo colaborativo donde cada persona importa.</p>
+            </div>
+        </div>
+
+        <!-- Right form panel -->
+        <div class="trabaja-form-panel">
+            <div class="form-header">
+                <h2>Envía tu solicitud</h2>
+                <p>Completa el formulario y te responderemos a la brevedad.</p>
+            </div>
+
+            <form id="trabaja-form" novalidate>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre <span class="req">*</span></label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="given-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos <span class="req">*</span></label>
+                        <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" required autocomplete="family-name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico <span class="req">*</span></label>
+                    <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje / Presentación <span class="req">*</span></label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos brevemente sobre ti y por qué quieres unirte a LA DOCE..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="cv">Adjuntar CV <span class="req-note">(opcional · PDF, DOC, DOCX · máx. 3 MB)</span></label>
+                    <div class="file-drop-zone" id="file-drop-zone">
+                        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" aria-label="Adjuntar CV">
+                        <div class="file-drop-inner">
+                            <span class="file-icon">📎</span>
+                            <span class="file-label" id="file-label">Arrastra tu CV aquí o <u>haz clic para seleccionar</u></span>
+                        </div>
+                    </div>
+                    <p class="cv-note">⚠️ El CV se envía como nombre de archivo referencial. Para enviarlo completo, adjúntalo respondiendo el correo de confirmación.</p>
+                </div>
+
+                <div id="form-status" role="alert"></div>
+
+                <button type="submit" id="btn-enviar" class="btn-submit">
+                    <span id="btn-text">✉️ Enviar Solicitud</span>
+                </button>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- MINI FOOTER -->
+    <footer id="footer">
+        <div class="logo" style="margin-bottom: 2rem; justify-content: center;">
+            <img src="static/images/logo.png" alt="LA DOCE Logo" style="height: 90px;">
+        </div>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">&copy; 2026 LA DOCE Inc. Todos los derechos reservados.</p>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Desarrollado por Kemper Aspajo</p>
+        <div class="nav-links" style="display:flex; justify-content:center; gap:2rem;">
+            <a href="https://www.instagram.com/ladoce.pucallpa/">Instagram</a>
+            <a href="https://www.facebook.com/ladocepucallpa/">Facebook</a>
+            <a href="https://www.tiktok.com/@ladocepucallpa">TikTok</a>
+        </div>
+    </footer>
+
+    <script src="static/js/trabaja.js"></script>
+
+</body>
+</html>
