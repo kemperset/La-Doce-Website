@@ -11,30 +11,11 @@
 
 <body>
 
-    <nav>
-        <a href="/" class="logo">
-            <img src="static/images/logo.png" alt="LA 12 Logo">
-        </a>
-        <div class="nav-links">
-            <a href="#hero">Home</a>
-            <a href="#mission">Filosofía</a>
-            <a href="#products">Productos</a>
-            <a href="trabaja.html">Trabaja con nosotros</a>
-            <a href="#footer">Nosotros</a>
-        </div>
-        <div style="display:flex; align-items:center; gap:1rem;">
-            <!-- Dark / Light Mode Toggle -->
-            <button id="theme-toggle" aria-label="Cambiar modo de color">
-                <span class="toggle-icon">🌙</span>
-                <span class="toggle-label">Modo Oscuro</span>
-            </button>
-            <a href="#" class="btn" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Comprar</a>
-        </div>
-    </nav>
+    <div id="navbar-placeholder"></div>
 
     <header id="hero" class="hero">
         <div class="hero-content reveal">
-            <h1>Supera tus límites <br><span class="accent">de ayer</span></h1>
+            <h1>CONFECCIONAMOS <br><span class="accent">TU PASIÓN</span></h1>
             <p>Ropa deportiva de <strong>alto rendimiento</strong> diseñada para atletas que buscan superar sus límites.</p>
             <a href="#products" class="btn">Explorar la colección</a>
         </div>
@@ -58,36 +39,10 @@
             <h2>Productos Destacados</h2>
             <p style="color: var(--text-secondary);">Diseñados para un rendimiento óptimo.</p>
         </div>
-        <div class="product-grid">
-            <div class="product-card reveal">
-                <div class="product-image">
-                    <img src="static/images/product_1.png" alt="Apex Neon Runners">
-                </div>
-                <div class="product-info">
-                    <h3>Apex Neon Runners</h3>
-                    <div class="price">$189.99</div>
-                    <p>Engineered for speed with responsive neon cushioning.</p>
-                </div>
-            </div>
-            <div class="product-card reveal">
-                <div class="product-image">
-                    <img src="static/images/product_2.png" alt="Vanguard Horizon Watch">
-                </div>
-                <div class="product-info">
-                    <h3>Vanguard Horizon Watch</h3>
-                    <div class="price">$299.00</div>
-                    <p>Next-gen biometric tracking with holographic HUD.</p>
-                </div>
-            </div>
-            <div class="product-card reveal">
-                <div class="product-image">
-                    <img src="static/images/product_1.png" alt="Elite Tech Fleece">
-                </div>
-                <div class="product-info">
-                    <h3>Elite Tech Fleece</h3>
-                    <div class="price">$125.00</div>
-                    <p>Ultra-breathable micro-fiber for peak performance.</p>
-                </div>
+        <div id="products-grid" class="product-grid">
+            <!-- Products will be loaded dynamically here -->
+            <div style="grid-column: 1/-1; text-align: center; padding: 3rem;">
+                <p>Cargando colección...</p>
             </div>
         </div>
     </section>
@@ -107,21 +62,17 @@
         </div>
     </section>
 
-    <footer id="footer">
-        <div class="logo" style="margin-bottom: 2rem; justify-content: center;">
-            <img src="static/images/logo.png" alt="LA 12 Logo" style="height: 90px;">
-        </div>
-        <p style="color: var(--text-secondary); margin-bottom: 1rem;">&copy; 2026 LA DOCE Inc. Todos los derechos
-            reservados.</p>
-        <p style="color: var(--text-secondary); margin-bottom: 1rem;"> Desarrollado por Kemper Aspajo</p>
-        <div class="nav-links" style="display: flex; justify-content: center; gap: 2rem;">
-            <a href="https://www.instagram.com/ladoce.pucallpa/">Instagram</a>
-            <a href="https://www.facebook.com/ladocepucallpa/">Facebook</a>
-            <a href="https://www.tiktok.com/@ladocepucallpa">TikTok</a>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <!-- Supabase Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- Core Scripts -->
+    <script src="static/js/loader.js"></script>
+    <script src="static/js/theme.js"></script>
+    <script src="static/js/supabase-config.js"></script>
     <script src="static/js/main.js"></script>
+    <script src="static/js/products.js"></script>
 </body>
 
 </html>

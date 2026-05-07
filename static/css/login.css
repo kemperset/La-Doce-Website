@@ -1,0 +1,104 @@
+/* LOGIN PAGE STYLES */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: radial-gradient(circle at top right, rgba(49, 46, 255, 0.05), transparent),
+                radial-gradient(circle at bottom left, rgba(0, 200, 83, 0.05), transparent);
+}
+
+.login-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--glass-border);
+    padding: 3.5rem 2.5rem;
+    border-radius: 28px;
+    width: 100%;
+    max-width: 420px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    margin-top: 2rem;
+}
+
+.login-card h1 {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+.login-card .form-group {
+    margin-bottom: 1.8rem;
+    position: relative;
+}
+
+.login-card label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 14px;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.login-card input:focus {
+    border-color: var(--color-accent);
+    background: rgba(0, 230, 118, 0.05);
+    outline: none;
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.1);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 40px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.3s;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    color: white;
+}
+
+.password-toggle:hover {
+    opacity: 1;
+}
+
+.btn-login {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+}
+
+#login-error {
+    background: rgba(255, 30, 30, 0.1);
+    border: 1px solid rgba(255, 30, 30, 0.2);
+    color: #ff6b6b;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }

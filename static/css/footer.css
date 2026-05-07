@@ -1,0 +1,20 @@
+footer {
+    padding: 5rem 5% 3rem;
+    background: var(--footer-bg);
+    text-align: center;
+    border-top: 1px solid var(--glass-border);
+}
+
+footer .logo img {
+    height: 80px;
+}
+
+footer p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+footer .nav-links {
+    margin-top: 2rem;
+    justify-content: center;
+}

@@ -14,25 +14,7 @@
 <body>
 
     <!-- NAV -->
-    <nav>
-        <a href="index.html" class="logo">
-            <img src="static/images/logo.png" alt="LA DOCE Logo">
-        </a>
-        <div class="nav-links">
-            <a href="index.html#hero">Home</a>
-            <a href="index.html#mission">Filosofía</a>
-            <a href="index.html#products">Productos</a>
-            <a href="trabaja.html" class="nav-active">Trabaja con nosotros</a>
-            <a href="index.html#footer">Nosotros</a>
-        </div>
-        <div style="display:flex; align-items:center; gap:1rem;">
-            <button id="theme-toggle" aria-label="Cambiar modo de color">
-                <span class="toggle-icon">🌙</span>
-                <span class="toggle-label">Modo Oscuro</span>
-            </button>
-            <a href="#" class="btn" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Comprar</a>
-        </div>
-    </nav>
+    <div id="navbar-placeholder"></div>
 
     <!-- PAGE HERO -->
     <div class="trabaja-hero">
@@ -118,20 +100,10 @@
         </div>
     </section>
 
-    <!-- MINI FOOTER -->
-    <footer id="footer">
-        <div class="logo" style="margin-bottom: 2rem; justify-content: center;">
-            <img src="static/images/logo.png" alt="LA DOCE Logo" style="height: 90px;">
-        </div>
-        <p style="color: var(--text-secondary); margin-bottom: 1rem;">&copy; 2026 LA DOCE Inc. Todos los derechos reservados.</p>
-        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Desarrollado por Kemper Aspajo</p>
-        <div class="nav-links" style="display:flex; justify-content:center; gap:2rem;">
-            <a href="https://www.instagram.com/ladoce.pucallpa/">Instagram</a>
-            <a href="https://www.facebook.com/ladocepucallpa/">Facebook</a>
-            <a href="https://www.tiktok.com/@ladocepucallpa">TikTok</a>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script src="static/js/loader.js"></script>
+    <script src="static/js/theme.js"></script>
     <script src="static/js/trabaja.js"></script>
 
 </body>

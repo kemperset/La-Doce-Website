@@ -1,0 +1,83 @@
+/* ADMIN DASHBOARD STYLES */
+.admin-container {
+    padding: 8rem 5% 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.admin-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--glass-border);
+    padding: 2rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.admin-card h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.product-list {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-list th, .product-list td {
+    text-align: left;
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.product-list img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.btn-delete {
+    background: var(--color-red) !important;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    border: none;
+}
+
+.form-add-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.admin-card input, 
+.admin-card textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 12px;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.admin-card input:focus, 
+.admin-card textarea:focus {
+    border-color: var(--color-accent);
+    outline: none;
+    background: rgba(0, 230, 118, 0.05);
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.1);
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}

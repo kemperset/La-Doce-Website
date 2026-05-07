@@ -1,0 +1,41 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 9.3rem 5% 0; /* Ajuste fino: subido ~0.3cm */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 10;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    font-weight: 900;
+    display: inline-block; /* Forzar al navegador a medir el ancho exacto */
+    letter-spacing: 1px; /* Espacio extra entre letras */
+    background: linear-gradient(135deg, #ffffff 40%, #c0d8ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding-right: 0.15em; /* Margen de seguridad */
+}
+
+.hero h1 .accent {
+    color: var(--color-accent);
+    -webkit-text-fill-color: var(--color-accent);
+    text-shadow: 0 0 40px rgba(0, 230, 118, 0.4);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: rgba(200, 230, 255, 0.8);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    letter-spacing: 0.5px;
+}

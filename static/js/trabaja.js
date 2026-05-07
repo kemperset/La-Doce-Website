@@ -3,26 +3,6 @@
 //  Lógica para trabaja.html: tema, CV upload y EmailJS
 // ============================================================
 
-// ── Dark / Light Mode Toggle ─────────────────────────────────
-const themeToggle = document.getElementById('theme-toggle');
-const toggleIcon  = themeToggle.querySelector('.toggle-icon');
-const toggleLabel = themeToggle.querySelector('.toggle-label');
-
-function applyTheme(isLight) {
-    document.body.classList.toggle('light-mode', isLight);
-    toggleIcon.textContent  = isLight ? '☀️' : '🌙';
-    toggleLabel.textContent = isLight ? 'Modo Claro' : 'Modo Oscuro';
-}
-
-// Restaurar preferencia guardada al cargar la página
-applyTheme(localStorage.getItem('laDoceTheme') === 'light');
-
-themeToggle.addEventListener('click', () => {
-    const nowLight = !document.body.classList.contains('light-mode');
-    applyTheme(nowLight);
-    localStorage.setItem('laDoceTheme', nowLight ? 'light' : 'dark');
-});
-
 // ── File Input — actualizar etiqueta al seleccionar archivo ──
 const cvInput   = document.getElementById('cv');
 const fileLabel = document.getElementById('file-label');
