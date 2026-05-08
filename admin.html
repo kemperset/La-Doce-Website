@@ -28,9 +28,17 @@
                     <label>Precio (S/)</label>
                     <input type="number" step="0.01" id="p-price" required placeholder="99.99">
                 </div>
+                <div class="form-group">
+                    <label>Stock Inicial</label>
+                    <input type="number" id="p-stock" required placeholder="0">
+                </div>
                 <div class="form-group full-width">
                     <label>Descripción</label>
                     <textarea id="p-desc" rows="2" required placeholder="Breve descripción del producto..."></textarea>
+                </div>
+                <div class="form-group full-width">
+                    <label>Tallas Disponibles (Separadas por comas)</label>
+                    <input type="text" id="p-sizes" placeholder="Ej: 38, 39, 40, 42">
                 </div>
                 <div class="form-group full-width">
                     <label>URL de la Imagen (o subir a Supabase)</label>
@@ -45,7 +53,15 @@
 
         <section class="admin-card reveal active">
             <h2>Inventario Actual</h2>
-            <div style="overflow-x: auto; margin-top: 1.5rem;">
+            
+            <div class="inventory-controls">
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="inventory-search" placeholder="Buscar por nombre o talla...">
+                </div>
+            </div>
+
+            <div style="overflow-x: auto; margin-top: 0.5rem;">
                 <table class="product-list">
                     <thead>
                         <tr>
@@ -62,6 +78,60 @@
             </div>
         </section>
     </main>
+
+    <!-- EDIT MODAL -->
+    <div id="edit-modal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2>Editar <span class="accent">Producto</span></h2>
+                <button class="close-modal" onclick="closeModal('edit-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-product-form" class="form-add-product">
+                    <input type="hidden" id="edit-p-id">
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" id="edit-p-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Precio (S/)</label>
+                        <input type="number" step="0.01" id="edit-p-price" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Stock</label>
+                        <input type="number" id="edit-p-stock" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Tallas</label>
+                        <input type="text" id="edit-p-sizes">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Descripción</label>
+                        <textarea id="edit-p-desc" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Imagen URL</label>
+                        <input type="text" id="edit-p-img" required>
+                    </div>
+                    <button type="submit" class="btn full-width">Actualizar Producto</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- DETAILS MODAL -->
+    <div id="details-modal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2>Detalles de <span class="accent">Ingreso</span></h2>
+                <button class="close-modal" onclick="closeModal('details-modal')">&times;</button>
+            </div>
+            <div id="details-content" class="modal-body">
+                <!-- Details will be loaded here -->
+            </div>
+            <button onclick="closeModal('details-modal')" class="btn full-width" style="margin-top: 1.5rem;">Cerrar</button>
+        </div>
+    </div>
 
     <div id="footer-placeholder"></div>
 
