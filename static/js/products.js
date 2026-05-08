@@ -28,6 +28,8 @@ const initialProducts = [
     }
 ];
 
+const FALLBACK_IMAGE = 'https://placehold.co/600x400/1a1a1a/ffffff?text=Imagen+No+Disponible';
+
 function renderProducts(products) {
     const grid = document.getElementById('products-grid');
     if (!grid) return;
@@ -35,7 +37,9 @@ function renderProducts(products) {
     grid.innerHTML = products.map(product => `
         <div class="product-card reveal">
             <div class="product-image">
-                <img src="${product.image}" alt="${product.name}">
+                <img src="${product.image}" 
+                     alt="${product.name}" 
+                     onerror="this.src='${FALLBACK_IMAGE}'; this.onerror=null;">
             </div>
             <div class="product-info">
                 <h3>${product.name}</h3>

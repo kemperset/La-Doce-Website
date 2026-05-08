@@ -3,6 +3,8 @@
  * Dashboard logic for product management using Supabase
  */
 
+const FALLBACK_IMAGE = 'https://placehold.co/600x400/1a1a1a/ffffff?text=Imagen+No+Disponible';
+
 // ── Authentication Check ──────────────────────────────────────
 async function checkAuth() {
     const { data: { session } } = await db.auth.getSession();
@@ -29,11 +31,11 @@ async function loadAdminProducts() {
 
     tbody.innerHTML = data.map(p => `
         <tr>
-            <td><img src="${p.image}" alt="${p.name}"></td>
+            <td><img src="${p.image}" alt="${p.name}" onerror="this.src='${FALLBACK_IMAGE}'; this.onerror=null;"></td>
             <td>${p.name}</td>
-            <td>$${p.price.toFixed(2)}</td>
+            <td>S/ ${p.price.toFixed(2)}</td>
             <td>
-                <button onclick="deleteProduct(${p.id})" class="btn btn-delete">Eliminar</button>
+                <button onclick="deleteProduct('${p.id}')" class="btn btn-delete">Eliminar</button>
             </td>
         </tr>
     `).join('');
@@ -63,6 +65,7 @@ async function addProduct(e) {
 
 // ── Delete Product ─────────────────────────────────────────────
 async function deleteProduct(id) {
+    console.log('Intentando eliminar producto con ID:', id);
     if (!confirm('¿Estás seguro de que quieres eliminar este producto?')) return;
 
     const { error } = await db
@@ -90,4 +93,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     const form = document.getElementById('add-product-form');
     if (form) form.addEventListener('submit', addProduct);
+
+    // ── Image Preview Logic ────────────────────────────────────
+    const imgInput = document.getElementById('p-img');
+    const previewContainer = document.getElementById('image-preview');
+
+    if (imgInput && previewContainer) {
+        imgInput.addEventListener('input', () => {
+            const url = imgInput.value.trim();
+            if (url) {
+                previewContainer.innerHTML = `<img src="${url}" onerror="this.src='${FALLBACK_IMAGE}'; this.onerror=null;">`;
+            } else {
+                previewContainer.innerHTML = `<p>Vista previa aparecerá aquí</p>`;
+            }
+        });
+    }
 });
