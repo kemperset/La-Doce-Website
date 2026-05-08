@@ -43,7 +43,7 @@ function renderProducts(products) {
             </div>
             <div class="product-info">
                 <h3>${product.name}</h3>
-                <div class="price">$${product.price.toFixed(2)}</div>
+                <div class="price">S/ ${product.price.toFixed(2)}</div>
                 <p>${product.description}</p>
             </div>
         </div>

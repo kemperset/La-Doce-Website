@@ -41,7 +41,8 @@ nav .logo:hover img {
     opacity: 0.7;
 }
 
-.nav-links a:hover, .nav-links a.nav-active {
+.nav-links a:hover,
+.nav-links a.nav-active {
     opacity: 1;
     color: var(--color-accent);
 }
